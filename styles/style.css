@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto Mono", monospace;
+  /* background-color: #eff2f7; */
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.container {
+  margin: 5rem;
+  z-index: 2;
+}
+
+.hit-name {
+  margin-bottom: 1rem;
+}
+
+#bg-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.custom-search-box-root {
+  margin: 3rem;
+}
+
+.custom-search-box-input {
+  border-radius: none;
+  border: 1px solid black;
+  height: 2.5rem;
+  width: 50%;
+  padding-left: 0.8rem;
+}
+
+.custom-reset-icon {
+  border-radius: none;
+}
+
+#quote {
+  font-style: italic;
+}
