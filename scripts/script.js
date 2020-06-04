@@ -1,3 +1,5 @@
+// import { annotate } from 'rough-notation';
+
 const searchOnlyKey = "b495880c7da60f5283236d75a8924d0a" // bad practice but funny project
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -44,5 +46,10 @@ search.addWidgets([
 ]);
 
 search.start();
+
+const e = document.querySelector('#office');
+console.log("annotate event is",e)
+const annotation = annotate(e, { type: 'underline' });
+annotation.show();
 
 });
