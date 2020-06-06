@@ -3,26 +3,29 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="styles/style.css" />
 
+  <!-- algolia -->
   <script
     src="https://cdn.jsdelivr.net/npm/algoliasearch@4.0.0/dist/algoliasearch-lite.umd.js"
     integrity="sha256-MfeKq2Aw9VAkaE9Caes2NOxQf6vUa8Av0JqcUXUGkd0="
     crossorigin="anonymous"
   ></script>
+  <!-- algolia's instantSearch -->
   <script
     src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.0.0/dist/instantsearch.production.min.js"
     integrity="sha256-6S7q0JJs/Kx4kb/fv0oMjS855QTz5Rc2hh9AkIUjUsk="
     crossorigin="anonymous"
   ></script>
-  <script type="module" src="https://unpkg.com/rough-notation?module"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"
+  ></script>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>CLASSIFIED UFO RECORDS</h1>
-      <p id="office">- EYES ONLY -</p>
-      <h3>
-        Pandora Office
-      </h3>
+      <p>- EYES ONLY -</p>
+      <h3><span id="office">Pandora </span>Office</h3>
       <small>Washington, D.C.</small>
       <div id="search-box"></div>
     </header>
@@ -31,34 +34,8 @@
       <div id="hits"></div>
       <div id="pagination"></div>
     </main>
-
-    <script type="text/html" id="hit-template">
-      <div class="hit">
-          <ul class="hit-name">
-            <li>
-                <span >
-                <strong>DATE TIME:</strong> {{#helpers.highlight}}{ "attribute": "datetime" }{{/helpers.highlight}}
-            </span>
-            </li>
-            <li>
-                <strong>COMMENT:</strong>"{{#helpers.highlight}}{ "attribute": "comments"}{{/helpers.highlight}}"
-            </li>
-            <li>
-                <strong>SHAPE: </strong>{{#helpers.highlight}}{ "attribute": "shape" }{{/helpers.highlight}}
-            </li>
-            <li>
-                <strong>DURATION: </strong>{{#helpers.highlight}}{ "attribute": "duration (hours/min)" }{{/helpers.highlight}}
-            </li>
-            <li>
-                <strong>CITY: </strong> {{#helpers.highlight}}{ "attribute": "city" }{{/helpers.highlight}}
-                | <strong>STATE: </strong> {{#helpers.highlight}}{ "attribute": "state" }{{/helpers.highlight}}
-                | <strong>COUNTRY: </strong>{{#helpers.highlight}}{ "attribute": "country" }{{/helpers.highlight}}
-                | <strong>LAT: </strong>{{#helpers.highlight}}{ "attribute": "latitude" }{{/helpers.highlight}}
-                | <strong>LNG: </strong>{{#helpers.highlight}}{ "attribute": "latitude" }{{/helpers.highlight}}
-            </li>
-          </ul>
-      </div>
-    </script>
   </div>
-  <script src="scripts/script.js"></script>
+
+  <script type="text/javascript" src="scripts/algolia.js"></script>
+  <script type="module" src="scripts/annotate.js"></script>
 </body>
